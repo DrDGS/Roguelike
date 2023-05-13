@@ -32,7 +32,7 @@ public class ChargerEnemyLogics : MonoBehaviour
     {
         if (chargeTime <= 1 && chargeTime >= 0.8)
         {
-            moveVector = (player.position - tr.position);
+            moveVector = (player.position - tr.position).normalized;
             Vector3 diff = player.position - tr.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;

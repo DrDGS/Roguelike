@@ -80,5 +80,10 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
             TakeDamage();
+        else if (collision.gameObject.tag == "Projectile")
+        {
+            TakeDamage();
+            GameObject.Destroy(collision.gameObject);
+        }
     }
 }

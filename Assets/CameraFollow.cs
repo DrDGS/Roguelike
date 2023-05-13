@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private Transform Target;
+    public Transform Target;
     public Vector3 Offset;
     public float SmoothTime = 0.3f;
     private Transform camTransform;
@@ -14,7 +14,6 @@ public class CameraFollow : MonoBehaviour
     {
         camTransform = GetComponent<Transform>();
         Offset = camTransform.position - Target.position;
-        Target = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 
     private void LateUpdate()

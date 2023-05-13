@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6057617975856468081}
   - component: {fileID: 2382937825813027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head_Mob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830735885427812333}
   - component: {fileID: 1348756698265581014}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right_Hand_Mob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2412443774743557858}
   - component: {fileID: 3892968873568889511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body_Mob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 255853957534327426}
   - component: {fileID: 7164426530880738026}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Charge_Mob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 3745635259460165150}
   - component: {fileID: 2489494427850787162}
   - component: {fileID: 1546713068557318599}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChargerEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -424,8 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1da842e1e18e3a4b8652bb7296fdaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 20
+  speed: 40
   _chargeTime: 4
   steering: 75
 --- !u!1 &8858967203763253286
@@ -438,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3167224094057367171}
   - component: {fileID: 1920144000645254777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left_Hand_Mob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
