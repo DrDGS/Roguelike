@@ -16,7 +16,7 @@ public class ArcherEnemyLogics : MonoBehaviour
     private Rigidbody2D rb;
     private Transform player;
     private bool arrflag = false;
-    private GameObject[] arrows;
+    private GameObject thisarrow;
     private int antielement;
 
     void Start()
@@ -45,28 +45,21 @@ public class ArcherEnemyLogics : MonoBehaviour
             bow.localPosition = new Vector3(2, 0, -1);
         else
             bow.localPosition = new Vector3(-2, 0, -1);
-        arrows = GameObject.FindGameObjectsWithTag("Projectile");
         if (chargeTime <= 1)
         {
             if (!arrflag)
             {
-                Instantiate(arrow, bow.position, Quaternion.identity);
+                thisarrow = Instantiate(arrow, bow.position, Quaternion.identity);
                 arrflag = true;
             }
-            foreach (GameObject child in arrows)
-            {
-                child.GetComponent<Transform>().rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-                child.GetComponent<Transform>().position = bow.position;
-            }
+            thisarrow.GetComponent<Transform>().rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+            thisarrow.GetComponent<Transform>().position = bow.position;
         }
         if (chargeTime <= 0)
         {
             chargeTime = _chargeTime;
             arrflag = false;
-            foreach (GameObject child in arrows)
-            {
-                child.GetComponent<Rigidbody2D>().AddForce(Quaternion.Euler(0f, 0f, rot_z - 90) * new Vector3(0, 1, 0) * arrowSpeed);
-            }
+            thisarrow.GetComponent<Rigidbody2D>().AddForce(Quaternion.Euler(0f, 0f, rot_z - 90) * new Vector3(0, 1, 0) * arrowSpeed);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -664,7 +664,7 @@ MonoBehaviour:
   bow: {fileID: 2101190158367871320}
   _chargeTime: 3
   arrow: {fileID: 7949651648421495033, guid: 7846070f58ff2b0468f07a6896d10ab1, type: 3}
-  arrowSpeed: 5
+  arrowSpeed: 10
   steering: 10
   offsetToPlayer: 15
 --- !u!114 &5334333914664333813

@@ -874,11 +874,14 @@ MonoBehaviour:
   - {fileID: 8844502390462389936, guid: 2763b95e8e8c7b140bba9f1844fc877f, type: 3}
   - {fileID: 8844502390462389936, guid: 577f33f98e075284c920936b763481ce, type: 3}
   - {fileID: 8844502390462389936, guid: 4beaa83509fa74b45aeaec36f1476ccf, type: 3}
+  Block: {fileID: 6732516689504041045, guid: b5726cc8f31d5044f9dbb20c2b71f43f, type: 3}
   EnemyCounter: 0
   spawnPos: {x: 0, y: 0, z: 0}
+  blockSpawnPos: {x: 0, y: 0, z: 0}
   SpawnRate: 5
   Iterator: 0
   distanceToSpawn: 25
+  distanceToSpawnBlock: 35
 --- !u!114 &8536384233238150492
 MonoBehaviour:
   m_ObjectHideFlags: 0
