@@ -21,8 +21,11 @@ public class Player : MonoBehaviour
     public float steering;
     public TextMeshProUGUI hpbar;
     public TextMeshProUGUI elementbar;
-    public GameObject death;   
+    public TextMeshProUGUI timerbar;
+    public GameObject death;
+    public float gameTimeInSeconds;
 
+    private float timeLeft;
     private string[] elemNames = { "No element", "Rock", "Paper", "Scissors" };
     private int _curElem;
     private int hp;
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        timeLeft = gameTimeInSeconds;
         Time.timeScale = 1;
         death.SetActive(false); 
         _curElem = ((int)elem.None);
@@ -50,9 +54,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        timeLeft -= Time.deltaTime;
+        timerbar.text = ((int)timeLeft) / 60 + ":" + ((int)timeLeft) % 60;
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = Vector3.Lerp(moveVelocity, moveInput.normalized * speed, steering * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Space)) TakeDamage(); //��������� ��������� ����� �� ������
+        if (Input.GetKeyDown(KeyCode.Space)) TakeDamage();
+        if (timeLeft <= 0)
+        {
+            Time.timeScale = 0;
+            death.SetActive(true);
+        }
     }
 
     private void FixedUpdate()

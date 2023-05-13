@@ -568,6 +568,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &570525425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5230500082015269022, guid: 77a619c5309dde0418793f90636a7305, type: 3}
+  m_PrefabInstance: {fileID: 570525423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &714346938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,9 +1041,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 570525424}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
+      propertyPath: timerbar
+      value: 
+      objectReference: {fileID: 570525425}
+    - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: elementbar
       value: 
       objectReference: {fileID: 1767456624}
+    - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
+      propertyPath: gameTimeInSeconds
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593074, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: m_RootOrder
       value: 7
