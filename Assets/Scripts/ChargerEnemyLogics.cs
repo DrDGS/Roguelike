@@ -14,6 +14,7 @@ public class ChargerEnemyLogics : MonoBehaviour
     private Transform tr;
     private Vector2 moveVector;
     private Vector2 moveVelocity;
+    private int antielement;
 
     void Start()
     {
@@ -44,5 +45,13 @@ public class ChargerEnemyLogics : MonoBehaviour
             chargeTime = _chargeTime;
         }
         rb.velocity = Vector3.MoveTowards(rb.velocity, new Vector3(0, 0, 0), Time.fixedDeltaTime * steering);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        antielement = gameObject.GetComponent<Namer>().antielement;
+        if (collision.gameObject.tag == "Sword" && player.gameObject.GetComponent<Player>().curElem == antielement)
+        {
+            Destroy(gameObject);
+        }
     }
 }

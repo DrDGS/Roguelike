@@ -10,7 +10,6 @@ public class ArcherEnemyLogics : MonoBehaviour
     public float arrowSpeed;
     public float steering;
     public float offsetToPlayer;
-    public float element;
 
     private float chargeTime;
     private Transform tr;
@@ -18,10 +17,10 @@ public class ArcherEnemyLogics : MonoBehaviour
     private Transform player;
     private bool arrflag = false;
     private GameObject[] arrows;
+    private int antielement;
 
     void Start()
     {
-        element = Random.Range(1, 4);
         chargeTime = _chargeTime;
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
@@ -68,6 +67,14 @@ public class ArcherEnemyLogics : MonoBehaviour
             {
                 child.GetComponent<Rigidbody2D>().AddForce(Quaternion.Euler(0f, 0f, rot_z - 90) * new Vector3(0, 1, 0) * arrowSpeed);
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        antielement = gameObject.GetComponent<Namer>().antielement;
+        if (collision.gameObject.tag == "Sword" && player.gameObject.GetComponent<Player>().curElem == antielement)
+        {
+            Destroy(gameObject);
         }
     }
 }
