@@ -10,6 +10,7 @@ public class ArcherEnemyLogics : MonoBehaviour
     public float arrowSpeed;
     public float steering;
     public float offsetToPlayer;
+    public float element;
 
     private float chargeTime;
     private Transform tr;
@@ -20,6 +21,7 @@ public class ArcherEnemyLogics : MonoBehaviour
 
     void Start()
     {
+        element = Random.Range(1, 4);
         chargeTime = _chargeTime;
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
