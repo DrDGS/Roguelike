@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rbody;
     private Vector2 moveInput;
     private Vector2 moveVelocity;
+    private SpriteRenderer[] sprites;
 
     public int curElem
     {
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
         _curElem = ((int)elem.None);
         hp = maxhp;
         rbody = GetComponent<Rigidbody2D>();
+        sprites = GetComponentsInChildren<SpriteRenderer>();
         hpbar.text = "HP: " + hp;
     }
 
@@ -47,7 +49,7 @@ public class Player : MonoBehaviour
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = Vector3.Lerp(moveVelocity, moveInput.normalized * speed, steering * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Space)) TakeDamage(); //временное получение урона на пробел
+        if (Input.GetKeyDown(KeyCode.Space)) TakeDamage(); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     private void FixedUpdate()
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour
         rbody.MovePosition(rbody.position + moveVelocity * Time.fixedDeltaTime);
     }
 
-    void TakeDamage()
+    async void TakeDamage()
     {
         hp -= 1;
         hpbar.text = "HP: " + hp;
@@ -65,5 +67,11 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Area")
             curElem = collision.gameObject.GetComponent<ChangeElement>().element;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+            TakeDamage();
     }
 }
