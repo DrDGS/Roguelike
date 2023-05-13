@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public float steering;
     public TextMeshProUGUI hpbar;
     public TextMeshProUGUI elementbar;
+    public GameObject death;   
 
     private string[] elemNames = { "No element", "Rock", "Paper", "Scissors" };
     private int _curElem;
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        death.SetActive(false); 
         _curElem = ((int)elem.None);
         hp = maxhp;
         rbody = GetComponent<Rigidbody2D>();
@@ -61,6 +63,10 @@ public class Player : MonoBehaviour
     {
         hp -= 1;
         hpbar.text = "HP: " + hp;
+        if (hp == 0) {
+            Time.timeScale = 0;
+            death.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
