@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeEnemyLogics : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float speed;
     public float steering;
 
@@ -17,6 +17,7 @@ public class MeleeEnemyLogics : MonoBehaviour
     {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 
     void Update()

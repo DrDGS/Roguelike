@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChargerEnemyLogics : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float speed;
     public float _chargeTime;
     public float steering;
@@ -20,6 +20,7 @@ public class ChargerEnemyLogics : MonoBehaviour
         chargeTime = _chargeTime;
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 
     void Update()
@@ -29,8 +30,9 @@ public class ChargerEnemyLogics : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (chargeTime <= 2)
+        if (chargeTime <= 1 && chargeTime >= 0.8)
         {
+            moveVector = (player.position - tr.position);
             Vector3 diff = player.position - tr.position;
             diff.Normalize();
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
@@ -38,7 +40,6 @@ public class ChargerEnemyLogics : MonoBehaviour
         }
         if (chargeTime <= 0)
         {
-            moveVector = (player.position - tr.position).normalized;
             rb.AddForce(moveVector * speed, ForceMode2D.Impulse);
             chargeTime = _chargeTime;
         }
