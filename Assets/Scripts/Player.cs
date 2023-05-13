@@ -22,9 +22,11 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI hpbar;
     public TextMeshProUGUI elementbar;
     public TextMeshProUGUI timerbar;
+    public TextMeshProUGUI pointsbar;
     public GameObject death;
     public float gameTimeInSeconds;
 
+    private int points;
     private float timeLeft;
     private string[] elemNames = { "No element", "Rock", "Paper", "Scissors" };
     private int _curElem;
@@ -96,5 +98,11 @@ public class Player : MonoBehaviour
             TakeDamage();
             GameObject.Destroy(collision.gameObject);
         }
+    }
+
+    public void AddPoints(int _points)
+    {
+        points += _points;
+        pointsbar.text = points.ToString(); 
     }
 }

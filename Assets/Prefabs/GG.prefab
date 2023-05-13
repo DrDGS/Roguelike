@@ -854,6 +854,7 @@ MonoBehaviour:
   hpbar: {fileID: 0}
   elementbar: {fileID: 0}
   timerbar: {fileID: 0}
+  pointsbar: {fileID: 0}
   death: {fileID: 0}
   gameTimeInSeconds: 0
 --- !u!114 &-3295080866789642732
@@ -892,7 +893,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sword: {fileID: 6007845798831594817}
   camera: {fileID: 0}
-  maxReload: 0
 --- !u!1 &5491727920184745884
 GameObject:
   m_ObjectHideFlags: 0

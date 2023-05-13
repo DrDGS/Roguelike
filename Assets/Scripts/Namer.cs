@@ -8,6 +8,7 @@ public class Namer : MonoBehaviour
 {
     public int element;
     public int antielement;
+    public int points;
     private string[] elemNames = { "No element", "Rock", "Paper", "Scissors" };
     [SerializeField] private TextMeshProUGUI elementbar;
 

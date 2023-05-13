@@ -667,7 +667,6 @@ MonoBehaviour:
   arrowSpeed: 5
   steering: 10
   offsetToPlayer: 15
-  element: 0
 --- !u!114 &5334333914664333813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,4 +680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 0
+  antielement: 0
+  points: 150
   elementbar: {fileID: 4304483768272403958}

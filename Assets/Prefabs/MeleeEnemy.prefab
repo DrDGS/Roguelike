@@ -677,6 +677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 0
+  antielement: 0
+  points: 50
   elementbar: {fileID: 8965746360768392105}
 --- !u!1 &8858967203763253286
 GameObject:

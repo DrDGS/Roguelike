@@ -51,6 +51,7 @@ public class ChargerEnemyLogics : MonoBehaviour
         antielement = gameObject.GetComponent<Namer>().antielement;
         if (collision.gameObject.tag == "Sword" && player.gameObject.GetComponent<Player>().curElem == antielement)
         {
+            player.gameObject.GetComponent<Player>().AddPoints(gameObject.GetComponent<Namer>().points);
             Destroy(gameObject);
         }
     }

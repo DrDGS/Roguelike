@@ -38,7 +38,7 @@ public class MeleeEnemyLogics : MonoBehaviour
         antielement = gameObject.GetComponent<Namer>().antielement;
         if (collision.gameObject.tag == "Sword" && player.gameObject.GetComponent<Player>().curElem == antielement)
         {
-            print(antielement);
+            player.gameObject.GetComponent<Player>().AddPoints(gameObject.GetComponent<Namer>().points);
             Destroy(gameObject);
         }
     }
