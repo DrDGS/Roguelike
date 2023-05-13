@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         death.SetActive(false); 
         _curElem = ((int)elem.None);
         hp = maxhp;
