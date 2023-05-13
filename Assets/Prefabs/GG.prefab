@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5491727918737338135}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: -0.133, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 5491727919761593073}
   - component: {fileID: 5491727919761593079}
   - component: {fileID: 5491727919761593072}
+  - component: {fileID: -3295080866789642732}
   m_Layer: 8
   m_Name: GG
   m_TagString: Player
@@ -514,7 +515,31 @@ MonoBehaviour:
   steering: 15
   hpbar: {fileID: 0}
   elementbar: {fileID: 0}
+  timerbar: {fileID: 0}
   death: {fileID: 0}
+  gameTimeInSeconds: 0
+--- !u!114 &-3295080866789642732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5491727919761593078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d47f16618084b9eb2249b7ca779486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Enemies:
+  - {fileID: 8844502390462389936, guid: 2763b95e8e8c7b140bba9f1844fc877f, type: 3}
+  - {fileID: 8844502390462389936, guid: 577f33f98e075284c920936b763481ce, type: 3}
+  - {fileID: 8844502390462389936, guid: 4beaa83509fa74b45aeaec36f1476ccf, type: 3}
+  EnemyCounter: 0
+  spawnPos: {x: 0, y: 0, z: 0}
+  SpawnRate: 5
+  Iterator: 0
+  distanceToSpawn: 25
 --- !u!1 &5491727920184745884
 GameObject:
   m_ObjectHideFlags: 0

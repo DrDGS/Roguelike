@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3247421690477528417, guid: 4ae97a8d1514f1f40aba495182585851, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247421690477528417, guid: 4ae97a8d1514f1f40aba495182585851, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247421690477528417, guid: 4ae97a8d1514f1f40aba495182585851, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3247421690477528418, guid: 4ae97a8d1514f1f40aba495182585851, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -773,6 +785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChargerEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8844502390462389936, guid: 577f33f98e075284c920936b763481ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 577f33f98e075284c920936b763481ce, type: 3}
 --- !u!1 &1333520370
@@ -1032,6 +1048,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3295080866789642732, guid: cc196ead5fc64c6429038324b399f570, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2124057194}
+    - target: {fileID: -3295080866789642732, guid: cc196ead5fc64c6429038324b399f570, type: 3}
+      propertyPath: SpawnRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: death
       value: 
@@ -1040,6 +1064,10 @@ PrefabInstance:
       propertyPath: hpbar
       value: 
       objectReference: {fileID: 570525424}
+    - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
+      propertyPath: maxhp
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: timerbar
       value: 
@@ -1050,7 +1078,7 @@ PrefabInstance:
       objectReference: {fileID: 1767456624}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: gameTimeInSeconds
-      value: 60
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593074, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: m_RootOrder
@@ -1175,6 +1203,10 @@ PrefabInstance:
     - target: {fileID: 8844502390462389936, guid: 4beaa83509fa74b45aeaec36f1476ccf, type: 3}
       propertyPath: m_Name
       value: ArcherEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844502390462389936, guid: 4beaa83509fa74b45aeaec36f1476ccf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4beaa83509fa74b45aeaec36f1476ccf, type: 3}
@@ -1377,7 +1409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8844502390462389936, guid: 2763b95e8e8c7b140bba9f1844fc877f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9176746610122472376, guid: 2763b95e8e8c7b140bba9f1844fc877f, type: 3}
       propertyPath: speed
