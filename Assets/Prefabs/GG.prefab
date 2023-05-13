@@ -882,6 +882,8 @@ MonoBehaviour:
   Iterator: 0
   distanceToSpawn: 25
   distanceToSpawnBlock: 35
+  minBlockScale: 4
+  maxBlockScale: 11
 --- !u!114 &8536384233238150492
 MonoBehaviour:
   m_ObjectHideFlags: 0

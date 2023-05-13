@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float Iterator;
     [SerializeField] private float distanceToSpawn;
     [SerializeField] private float distanceToSpawnBlock;
+    [SerializeField] private float minBlockScale;
+    [SerializeField] private float maxBlockScale;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,7 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < EnemyCounter; ++i)
                 Instantiate(Enemies[Random.Range(0, 3)], spawnPos, Quaternion.identity);
             GameObject newBlock = Instantiate(Block, blockSpawnPos, Quaternion.identity);
-            newBlock.transform.localScale = new Vector3(Random.Range(3, 10), Random.Range(3, 10), 1);
+            newBlock.transform.localScale = new Vector3(Random.Range(minBlockScale, maxBlockScale + 1), Random.Range(minBlockScale, maxBlockScale + 1), 1);
             Iterator = SpawnRate;
         }
     }
