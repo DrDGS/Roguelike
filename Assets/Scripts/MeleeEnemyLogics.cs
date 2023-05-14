@@ -14,12 +14,14 @@ public class MeleeEnemyLogics : MonoBehaviour
     private Vector2 moveVector;
     private Vector2 moveVelocity;
     private int antielement;
+    private AudioSource deathAudioSource;
 
     void Start()
     {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        deathAudioSource = player.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -39,6 +41,7 @@ public class MeleeEnemyLogics : MonoBehaviour
         if (collision.gameObject.tag == "Sword" && player.gameObject.GetComponent<Player>().curElem == antielement)
         {
             player.gameObject.GetComponent<Player>().AddPoints(gameObject.GetComponent<Namer>().points);
+            deathAudioSource.Play();
             Destroy(gameObject);
         }
     }

@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public float[] spawnRate;
     public int[] plusEnemies;
     public float[] gameTime;
+    public AudioSource deathSoundSource;
 
     private float gameTimeInSeconds;
     private Spawner spawner;

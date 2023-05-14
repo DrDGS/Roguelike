@@ -809,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: gameTime.Array.data[0]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: gameTime.Array.data[1]
@@ -833,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: spawnRate.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5491727919761593072, guid: cc196ead5fc64c6429038324b399f570, type: 3}
       propertyPath: spawnRate.Array.data[1]

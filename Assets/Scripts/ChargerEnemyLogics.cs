@@ -15,6 +15,7 @@ public class ChargerEnemyLogics : MonoBehaviour
     private Vector2 moveVector;
     private Vector2 moveVelocity;
     private int antielement;
+    private AudioSource deathAudioSource;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class ChargerEnemyLogics : MonoBehaviour
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        deathAudioSource = player.gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -52,6 +54,7 @@ public class ChargerEnemyLogics : MonoBehaviour
         if (collision.gameObject.tag == "Sword" && player.gameObject.GetComponent<Player>().curElem == antielement)
         {
             player.gameObject.GetComponent<Player>().AddPoints(gameObject.GetComponent<Namer>().points);
+            deathAudioSource.Play();
             Destroy(gameObject);
         }
     }

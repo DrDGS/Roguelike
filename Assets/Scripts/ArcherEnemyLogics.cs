@@ -18,6 +18,8 @@ public class ArcherEnemyLogics : MonoBehaviour
     private bool arrflag = false;
     private GameObject thisarrow;
     private int antielement;
+    private AudioSource bowAudioSource;
+    private AudioSource deathAudioSource;
 
     void Start()
     {
@@ -25,6 +27,9 @@ public class ArcherEnemyLogics : MonoBehaviour
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        bowAudioSource = bow.gameObject.GetComponent<AudioSource>();
+        deathAudioSource = player.gameObject.GetComponent<AudioSource>();
+        bowAudioSource.volume= 0.25f;
     }
 
     void Update()
@@ -54,6 +59,10 @@ public class ArcherEnemyLogics : MonoBehaviour
             }
             thisarrow.GetComponent<Transform>().rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
             thisarrow.GetComponent<Transform>().position = bow.position;
+            if (!bowAudioSource.isPlaying && Time.deltaTime != 0)
+            {
+                bowAudioSource.PlayDelayed(0.3f);
+            }
         }
         if (chargeTime <= 0)
         {
@@ -68,6 +77,7 @@ public class ArcherEnemyLogics : MonoBehaviour
         if (collision.gameObject.tag == "Sword" && player.gameObject.GetComponent<Player>().curElem == antielement)
         {
             player.gameObject.GetComponent<Player>().AddPoints(gameObject.GetComponent<Namer>().points);
+            deathAudioSource.Play();
             Destroy(gameObject);
         }
     }
