@@ -24,8 +24,15 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI timerbar;
     public TextMeshProUGUI pointsbar;
     public GameObject death;
-    public float gameTimeInSeconds;
+    public GameObject win;
+    public GameObject absVic;
+    public float[] spawnRate;
+    public int[] plusEnemies;
+    public float[] gameTime;
 
+    private float gameTimeInSeconds;
+    private Spawner spawner;
+    private LevelSystem levSys;
     private int points;
     private float timeLeft;
     private string[] elemNames = { "No element", "Rock", "Paper", "Scissors" };
@@ -44,14 +51,22 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        timeLeft = gameTimeInSeconds;
         Time.timeScale = 1;
-        death.SetActive(false); 
+        death.SetActive(false);
+        win.SetActive(false);
+        absVic.SetActive(false);
+        levSys = win.GetComponent<LevelSystem>();
+        spawner = GetComponent<Spawner>();
+        spawner.SpawnRate = spawnRate[levSys.level];
+        spawner.PlusEnemies = plusEnemies[levSys.level];
+        gameTimeInSeconds = gameTime[levSys.level];
+        timeLeft = gameTimeInSeconds;
         _curElem = ((int)elem.None);
         hp = maxhp;
         rbody = GetComponent<Rigidbody2D>();
         sprites = GetComponentsInChildren<SpriteRenderer>();
         hpbar.text = "HP: " + hp;
+        AddPoints(win.GetComponent<LevelSystem>().points);
     }
 
     void Update()
@@ -63,8 +78,19 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) TakeDamage();
         if (timeLeft <= 0)
         {
-            Time.timeScale = 0;
-            death.SetActive(true);
+            if (levSys.level == 4)
+            {
+                levSys.level = 0;
+                levSys.points = 0;
+                Time.timeScale = 0;
+                absVic.SetActive(true);
+            }
+            else if (levSys.level <= 3 && !absVic.activeInHierarchy)
+            {
+                levSys.points = points;
+                Time.timeScale = 0;
+                win.SetActive(true);
+            }
         }
     }
 
@@ -78,6 +104,8 @@ public class Player : MonoBehaviour
         hp -= 1;
         hpbar.text = "HP: " + hp;
         if (hp == 0) {
+            levSys.level = 0;
+            levSys.points = 0;
             Time.timeScale = 0;
             death.SetActive(true);
         }

@@ -856,7 +856,21 @@ MonoBehaviour:
   timerbar: {fileID: 0}
   pointsbar: {fileID: 0}
   death: {fileID: 0}
-  gameTimeInSeconds: 0
+  win: {fileID: 0}
+  absVic: {fileID: 0}
+  spawnRate:
+  - 2
+  - 2
+  - 3
+  - 4
+  - 2
+  plusEnemies: 0100000001000000010000000100000001000000
+  gameTime:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!114 &-3295080866789642732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,12 +892,13 @@ MonoBehaviour:
   EnemyCounter: 0
   spawnPos: {x: 0, y: 0, z: 0}
   blockSpawnPos: {x: 0, y: 0, z: 0}
-  SpawnRate: 5
   Iterator: 0
   distanceToSpawn: 25
   distanceToSpawnBlock: 35
   minBlockScale: 4
   maxBlockScale: 11
+  SpawnRate: 5
+  PlusEnemies: 0
 --- !u!114 &8536384233238150492
 MonoBehaviour:
   m_ObjectHideFlags: 0

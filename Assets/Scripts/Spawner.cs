@@ -10,12 +10,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int EnemyCounter;
     [SerializeField] private Vector3 spawnPos;
     [SerializeField] private Vector3 blockSpawnPos;
-    [SerializeField] private float SpawnRate;
     [SerializeField] private float Iterator;
     [SerializeField] private float distanceToSpawn;
     [SerializeField] private float distanceToSpawnBlock;
     [SerializeField] private float minBlockScale;
     [SerializeField] private float maxBlockScale;
+    [SerializeField] public float SpawnRate;
+    [SerializeField] public int PlusEnemies;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Spawner : MonoBehaviour
         Iterator -= Time.deltaTime;
         if (Iterator <= 0) 
         {
-            EnemyCounter++;
+            EnemyCounter += PlusEnemies;
             spawnPos = Player.position + 
                 (Quaternion.Euler(0, 0, Random.Range(0, 360)) * 
                 new Vector3(distanceToSpawn, 0, 0));
