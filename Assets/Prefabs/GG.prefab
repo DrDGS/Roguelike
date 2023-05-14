@@ -860,18 +860,18 @@ MonoBehaviour:
   win: {fileID: 0}
   absVic: {fileID: 0}
   spawnRate:
-  - 100
-  - 2
+  - 3
   - 3
   - 4
+  - 5
   - 2
-  plusEnemies: 0500000001000000010000000100000001000000
+  plusEnemies: 0100000001000000020000000200000003000000
   gameTime:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  - 10
+  - 15
+  - 20
+  - 25
+  - 15
   deathSoundSource: {fileID: 0}
 --- !u!114 &-3295080866789642732
 MonoBehaviour:
